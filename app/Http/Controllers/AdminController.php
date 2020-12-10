@@ -28,8 +28,7 @@ class AdminController extends Controller
 
     public function store(Request $request)
     {
-        return $request;
-        /*
+
         $this->validate($request,[
             'name' => 'required|max:255',
             'email' => 'required|email|unique:users',
@@ -49,10 +48,10 @@ class AdminController extends Controller
 
 
         $user->save();
-        $user->syncRoles($request->role);
+        $user->syncRoles(explode(',',$request->roles));
 
         return redirect()->back()->with('message', 'Added User Data!');
-        */
+
     }
 
 }
