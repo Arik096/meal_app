@@ -53,21 +53,19 @@
                          </div>
                          <div class="modal-body">
 
-                         <form method="POST" action="{{route('userStore')}}" enctype="multipart/form-data">@csrf
+                         <form action="{{route('userStore')}}" method="POST"  enctype="multipart/form-data">@csrf
                             <div class="form-row">
-
-
                                 <label>Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter Name">
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name">
 
                                 <label>Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter Email">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email">
 
                                 <label>Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="Enter Password">
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Enter Password">
 
                                 <label>Role</label>
-                                <select id="role" class="form-control">
+                                <select id="role" class="form-control" name="roles">
                                   <option selected>Choose User Role</option>
                                   <option value='2'>HR</option>
                                   <option value='3'>Accounts</option>
