@@ -13,7 +13,7 @@ class MealController extends Controller
 
          $this->validate($request, [
              'user_id' => 'required|numeric',
-            'lunch_date' => 'required|date|unique:meals',
+            'lunch_date' => 'required|date',
             'lunch' => 'required|boolean',
             'guest_lunch' => 'required|numeric',
          ]);
