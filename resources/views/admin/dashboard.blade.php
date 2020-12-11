@@ -1,5 +1,19 @@
 @extends('admin.layouts.admin')
 
+@if (Session::has('message'))
+                    <div class="alert alert-success">
+                      {{Session::get('message')}}
+                    </div>
+                  @endif
+                  <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -19,11 +33,7 @@
 </div>
 <br><br>
 
-@if (Session::has('message'))
-                    <div class="alert alert-success">
-                      {{Session::get('message')}}
-                    </div>
-                  @endif
+
 
 
 <div class="container">
