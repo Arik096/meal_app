@@ -23,6 +23,11 @@ class AdminController extends Controller
         $users =DB::table('users')->get();
 
         $today = Carbon::now();
+
+
+        //$total_meal = count(DB::select('select guest_lunch from meals where date = today', [1]));
+
+
         return view('admin.dashboard', compact('today','users'));
     }
 
