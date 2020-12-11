@@ -2,7 +2,14 @@
 
 @section('script')
     <script>
-
+        window.onload = function() {
+        var d = new Date(); //current time
+        var h = d.getHours(); //current hour
+        if(d.getHours() >= 11)
+          {
+          document.getElementById("date").disabled = true;
+          }
+        }
     </script>
 @endsection
 
