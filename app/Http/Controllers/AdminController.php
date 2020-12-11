@@ -20,15 +20,16 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-        $users =DB::table('users')->get();
+         $users =DB::table('users')->get();
 
-        $today = Carbon::now();
+         $today = Carbon::now();
+
+         $lunch_count = DB::table('meals')->where('lunch_date', Carbon::now()->toDateString())->sum('lunch');
+         $guest_lunch_count = DB::table('meals')->where('lunch_date', Carbon::now()->toDateString())->sum('guest_lunch');
+         $total_lunch = $lunch_count + $guest_lunch_count;
 
 
-        //$total_meal = count(DB::select('select guest_lunch from meals where date = today', [1]));
-
-
-        return view('admin.dashboard', compact('today','users'));
+         return view('admin.dashboard', compact('today','users','total_lunch'));
     }
 
     public function store(Request $request)
