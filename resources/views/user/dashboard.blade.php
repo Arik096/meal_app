@@ -1,5 +1,11 @@
 @extends('user.layouts.user')
 
+@section('script')
+    <script>
+
+    </script>
+@endsection
+
 @if (Session::has('message'))
                     <div class="alert alert-success">
                       {{Session::get('message')}}
@@ -39,7 +45,7 @@
 
                                 <div class="col-sm-5">
                                 <label>Select Date:</label>
-                                <input type="date" class="form-control" name="lunch_date" id="date" value="<?php echo date('Y-m-d'); ?>" />
+                                <input type="date" class="form-control" name="lunch_date" id="date" value="<?php echo date('Y-m-d'); ?>"  />
                                 </div>
 
 
@@ -59,7 +65,7 @@
                             </div>
                             <hr>
                             <div>
-                            <button type="submit" class="btn btn-primary">Save Lunch</button>
+                            <button type="submit" id="submit" class="btn btn-primary">Save Lunch</button>
                            </div>
                            </form>
 
