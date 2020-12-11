@@ -2,10 +2,10 @@
 
 @section('script')
     <script>
-        window.onload = function() {
+        myFunction(){
         var d = new Date(); //current time
         var h = d.getHours(); //current hour
-        if(d.getHours() >= 11)
+        if(d.getHours() >= 0)
           {
           document.getElementById("date").disabled = true;
           }
@@ -30,7 +30,7 @@
 @endif
 
 @section('content')
-    <div class="container">
+    <div class="container" onload="myFunction()">
     <div class="row">
         <div class="col">
             <div class="card">
