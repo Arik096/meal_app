@@ -4,8 +4,9 @@
                     <div class="alert alert-success">
                       {{Session::get('message')}}
                     </div>
-
-                  <div class="alert alert-danger">
+@endif
+                  @if ($errors->any())
+    <div class="alert alert-danger">
         <ul>
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
@@ -25,7 +26,7 @@
                 </div>
 
                 <div class="card-body">
-                    <h1 style="text-align: center;font-weight: bold;"><span class="badge badge-success">10</span></h1>
+                    <h1 style="text-align: center;font-weight: bold;"><span class="badge badge-success">{{$total_lunch}}</span></h1>
                 </div>
             </div>
         </div>
