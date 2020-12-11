@@ -4,7 +4,7 @@
                     <div class="alert alert-success">
                       {{Session::get('message')}}
                     </div>
-                  @endif
+
                   <div class="alert alert-danger">
         <ul>
             @foreach ($errors->all() as $error)
@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="card-body">
-                    <h1 style="text-align: center;font-weight: bold;"><span class="badge badge-success">23</span></h1>
+                    <h1 style="text-align: center;font-weight: bold;"><span class="badge badge-success">10</span></h1>
                 </div>
             </div>
         </div>
