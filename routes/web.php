@@ -30,4 +30,6 @@ Route::group(['prefix' => 'admin/', 'middleware' => ['role:superadmin']], functi
 
 Route::group(['prefix' => 'user/', 'middleware' => ['role:hr|account|staff']], function () {
     Route::get('dashboard', 'UserController@dashboard')->name('userDashborad');
+    Route::post('dashboard', 'MealController@store')->name('mealStore');
+
 });
