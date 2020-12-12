@@ -1,18 +1,5 @@
 @extends('user.layouts.user')
 
-@section('script')
-    <script>
-        myFunction(){
-        var d = new Date(); //current time
-        var h = d.getHours(); //current hour
-        if(d.getHours() >= 0)
-          {
-          document.getElementById("date").disabled = true;
-          }
-        }
-    </script>
-@endsection
-
 @if (Session::has('message'))
                     <div class="alert alert-success">
                       {{Session::get('message')}}
@@ -30,7 +17,8 @@
 @endif
 
 @section('content')
-    <div class="container" onload="myFunction()">
+
+    <div class="container">
     <div class="row">
         <div class="col">
             <div class="card">
@@ -42,7 +30,7 @@
                 <div class="card-body">
 
 
-                    <form action="{{route('mealStore')}}" method="POST"  enctype="multipart/form-data">@csrf
+                    <form  action="{{route('mealStore')}}" method="POST"  enctype="multipart/form-data">@csrf
                             <div class="form-group row">
 
                                 <div class="col-sm-5">
@@ -52,8 +40,21 @@
 
                                 <div class="col-sm-5">
                                 <label>Select Date:</label>
-                                <input type="date" class="form-control" name="lunch_date" id="date" value="<?php echo date('Y-m-d'); ?>"  />
+                                <input onload="script();" type="date" class="form-control" name="lunch_date" id="lunch_date" value="<?php echo date('Y-m-d'); ?>"/>
                                 </div>
+
+
+                                <script>
+                                      window.onload = function myFunc(){
+                                                  var date = document.getElementById("lunch_date").value;
+                                                  var d = new Date(); //current time
+                                                  var h = d.getHours(); //current hour
+                                                  if(h >= 12){
+                                                   document.getElementById("lunch_date").disabled = true;
+                                                   document.getElementById("submit").disabled = true;
+                                                    }
+                                      }
+                                </script>
 
 
                                 <div class="col-sm-5">
