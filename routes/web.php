@@ -25,7 +25,9 @@ Route::get('/home', 'HomeController@index')->name('welome');
 
 Route::group(['prefix' => 'admin/', 'middleware' => ['role:superadmin']], function () {
     Route::get('dashboard', 'AdminController@dashboard')->name('adminDashborad');
-    Route::post('dasboard', 'AdminController@store')->name('userStore');
+    Route::post('userStore', 'AdminController@store')->name('userStore');
+    Route::post('EntryTimeStore', 'EntryTimeController@store')->name('EntryTimeStore');
+
 });
 
 Route::group(['prefix' => 'user/', 'middleware' => ['role:hr|account|staff']], function () {
