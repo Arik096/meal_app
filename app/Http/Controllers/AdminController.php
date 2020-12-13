@@ -21,6 +21,8 @@ class AdminController extends Controller
     public function dashboard()
     {
          $users =DB::table('users')->get();
+         $entry_time_max_id=DB::table('entry_times')->max('id');
+         $entry_time = DB::table('entry_times')->where('id','=', $entry_time_max_id)->get('entry_last_time');
 
          $today = Carbon::now();
 
@@ -29,7 +31,7 @@ class AdminController extends Controller
          $total_lunch = $lunch_count + $guest_lunch_count;
 
 
-         return view('admin.dashboard', compact('today','users','total_lunch'));
+         return view('admin.dashboard', compact('today','users','total_lunch', 'entry_time'));
     }
 
     public function store(Request $request)
