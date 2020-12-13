@@ -25,6 +25,7 @@
                 <div class="card-header" style="text-align: center;">
                 <h1>Welcome, {{Auth::user()->name}}</h1>
                     <h2>Apply For a Lunch</h2>
+                    <h3>Last Time For Apply Lunch {{$entry_time}}</h3>
                 </div>
 
                 <div class="card-body">
