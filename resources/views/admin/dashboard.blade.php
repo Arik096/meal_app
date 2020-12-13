@@ -33,6 +33,40 @@
     </div>
 </div>
 <br><br>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header" style="text-align: center;">
+                    <h2>Set Last Meal Entry Time</h2>
+                </div>
+
+                <div class="card-body">
+
+                    <form  action="{{route('EntryTimeStore')}}" method="POST"  enctype="multipart/form-data">@csrf
+                            <div class="form-group row">
+                                <div class="col-sm-5">
+                                <p>Current Time : {{$entry_time}}</p>
+                                </div>
+                                <div class="col-sm-5">
+                                <label>Enter New Time</label>
+                                <input type="time" class="form-control" name="entry_last_time" id="entry_last_time" Value=''>
+                                </div>
+
+                            </div>
+                            <hr>
+                            <div>
+                            <button type="submit" id="submit" class="btn btn-primary" style="float: right;">Save New Entry Time</button>
+                           </div>
+                           </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
 
 
 
