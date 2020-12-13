@@ -46,7 +46,11 @@
                     <form  action="{{route('EntryTimeStore')}}" method="POST"  enctype="multipart/form-data">@csrf
                             <div class="form-group row">
                                 <div class="col-sm-5">
-                                <p>Current Time : {{$entry_time}}</p>
+                                <p>Current Time :
+                                    @foreach ($entry_time as $time)
+                                         {{$time->entry_last_time}}
+                                      @endforeach
+                               </p>
                                 </div>
                                 <div class="col-sm-5">
                                 <label>Enter New Time</label>
